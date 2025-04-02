@@ -1,0 +1,29 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - build
+  - -t
+  - us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/solid-fm
+  - -f
+  - deploy/Dockerfile
+  - .
+
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - push
+  - us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/solid-fm
+
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - run
+  - deploy
+  - solid-fm
+  - --image=us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/solid-fm
+  - --region=us-central1
+  - --platform=managed
+  - --allow-unauthenticated
+  - --port=8080
+
+images:
+- us-central1-docker.pkg.dev/$PROJECT_ID/docker-repo/solid-fm
