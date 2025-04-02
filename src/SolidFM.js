@@ -514,10 +514,14 @@ const handleBulkDelete = async () => {
                 {currentTheme === THEMES.NEXT ? 'NeXT-FM' : 'TBL-FM'}
               </span>
               <div className="space-x-4 text-white dark:text-next-white text-sm">
-                <span className={classes.menuItem}>File</span>
-                <span className={classes.menuItem}>Edit</span>
-                <span className={classes.menuItem}>View</span>
-                <span className={classes.menuItem}>Help</span>
+                {currentTheme === THEMES.NEXT && (
+                  <>
+                    <span className={classes.menuItem}>File</span>
+                    <span className={classes.menuItem}>Edit</span>
+                    <span className={classes.menuItem}>View</span>
+                    <span className={classes.menuItem}>Help</span>
+                  </>
+                )}
               </div>
             </div>
           </div>
