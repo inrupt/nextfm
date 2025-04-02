@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
 import { useTheme, THEMES } from './themes/themeContext';
 import { getThemeClasses } from './themes/themeStyles';
 // Theme-specific logos
@@ -88,7 +87,7 @@ const StationSelector = ({ onLogin }) => {
                   setSelectedIDP('podspaces');
                   setShowManualEntry(false);
                 }}
-                className={`w-full text-left p-2 text-sm flex items-center justify-between
+                className={`w-full text-left p-2 text-sm flex items-center
                   ${selectedIDP === 'podspaces' 
                     ? isNeXTTheme 
                       ? 'bg-next-blue text-next-white' 
@@ -99,7 +98,6 @@ const StationSelector = ({ onLogin }) => {
                   } ${isNeXTTheme ? 'border border-next-border' : 'border border-gray-200 rounded'}`}
               >
                 <span>Inrupt PodSpaces</span>
-                {selectedIDP === 'podspaces' && <ArrowRight className="h-3 w-3" />}
               </button>
               
               <button
@@ -107,7 +105,7 @@ const StationSelector = ({ onLogin }) => {
                   setSelectedIDP('manual');
                   setShowManualEntry(true);
                 }}
-                className={`w-full text-left p-2 text-sm flex items-center justify-between
+                className={`w-full text-left p-2 text-sm flex items-center
                   ${selectedIDP === 'manual' 
                     ? isNeXTTheme 
                       ? 'bg-next-blue text-next-white' 
@@ -118,7 +116,6 @@ const StationSelector = ({ onLogin }) => {
                   } ${isNeXTTheme ? 'border border-next-border' : 'border border-gray-200 rounded'}`}
               >
                 <span>Custom Provider</span>
-                {selectedIDP === 'manual' && <ArrowRight className="h-3 w-3" />}
               </button>
             </div>
 
