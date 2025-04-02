@@ -1,10 +1,10 @@
-# Solid File Manager (Solid-FM)
+# TIMBL File Manager (TIMBL-FM)
 
-A file manager for Solid pods with support for multiple visual themes.
+A file manager for Solid pods with support for multiple visual themes, inspired by Tim Berners-Lee.
 
 ## About
 
-Solid-FM is a file manager for Solid pods that allows users to browse, upload, download, and manage their files in their Solid pod storage. It supports various file operations and provides a visual interface for interacting with Solid storage.
+TIMBL-FM is a file manager for Solid pods that allows users to browse, upload, download, and manage their files in their Solid pod storage. It supports various file operations and provides a visual interface for interacting with Solid storage.
 
 ## Features
 
@@ -48,8 +48,8 @@ Developers can add new themes by:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/solid-fm.git
-cd solid-fm
+git clone https://github.com/inrupt/timbl-fm.git
+cd timbl-fm
 
 # Install dependencies
 npm install
@@ -66,4 +66,4 @@ npm run build
 
 ## License
 
-MIT License
+Apache License 2.0
