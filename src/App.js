@@ -10,7 +10,7 @@ import {
 import { validateFolderName, validatePath } from './security';
 import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
 import { useAuth } from './authentication';
-import SolidFM from './SolidFM';
+import TimBLFM from './TimBLFM';
 import RadioLoader from './RadioLoader';
 import { uploadFiles, moveFolder, createProgressTracker, deleteResource } from './fileOperations';
 import { ThemeProvider } from './themes/themeContext';
@@ -388,7 +388,7 @@ if (error || authError) {
   return (
       <ThemeProvider>
         <div className="App">
-          <SolidFM {...solidFmProps} />
+          <TimBLFM {...solidFmProps} />
         </div>
       </ThemeProvider>
     );

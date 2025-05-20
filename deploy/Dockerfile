@@ -3,7 +3,7 @@ FROM node:18-alpine as builder
 WORKDIR /app
 
 # Add build arguments
-ARG PUBLIC_URL=https://solidfm.app
+ARG PUBLIC_URL=https://timblfm.app
 ENV PUBLIC_URL=$PUBLIC_URL
 
 # Install dependencies

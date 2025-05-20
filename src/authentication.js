@@ -65,7 +65,7 @@ export function useAuth(onStorageLocation) {
       await login({
         oidcIssuer: selectedIDP.oidcIssuer,
         redirectUrl: window.location.origin + '/',
-        clientName: "SolidFM",
+        clientName: "TimBLFM",
         tokenType: "DPoP"
       });
     } catch (error) {

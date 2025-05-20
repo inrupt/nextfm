@@ -51,12 +51,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/inrupt/solid-fm.git"
+    "url": "https://github.com/inrupt/timbl-fm.git"
   },
   "bugs": {
-    "url": "https://github.com/inrupt/solid-fm/issues"
+    "url": "https://github.com/inrupt/timbl-fm/issues"
   },
-  "homepage": "https://solidfm.app",
+  "homepage": "https://timblfm.app",
   "eslintConfig": {
     "extends": [
       "react-app",

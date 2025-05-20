@@ -25,7 +25,7 @@ import ThemeSelector from './components/ThemeSelector';
 import nextLogo from './NeXT_logo.svg';
 import solidLogo from './solid.png';
 
-const SolidFM = ({
+const TimBLFM = ({
   isLoggedIn,
   webId,
   podRoot,
@@ -838,4 +838,4 @@ const handleBulkDelete = async () => {
   );
 }
 
-export default SolidFM;
+export default TimBLFM;

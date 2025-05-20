@@ -65,7 +65,7 @@ export default function IntegrationTest() {
         await login({
           oidcIssuer: "https://login.inrupt.com",
           redirectUrl: window.location.href,
-          clientName: "SolidFM"  // Updated to match your app name
+          clientName: "TimBLFM"  // Updated to match your app name
         });
         return; // Will redirect for auth
       }
@@ -89,7 +89,7 @@ export default function IntegrationTest() {
       }
 
       const session = getDefaultSession();
-      const testContainerUrl = `${podRoot}solidfm-test/`;
+      const testContainerUrl = `${podRoot}timblfm-test/`;
       
       // Create test container
       await createContainerAt(testContainerUrl, { fetch: session.fetch });
