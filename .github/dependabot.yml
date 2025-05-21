@@ -29,9 +29,9 @@ updates:
         update-types:
           - "major"
     # Ignore certain packages if needed
-    # ignore:
-    #   - dependency-name: "react"
-    #     versions: ["19.x"]
+    ignore:
+      - dependency-name: "tailwindcss"
+        versions: ["4.x"]
     commit-message:
       prefix: "npm"
       include: "scope"
