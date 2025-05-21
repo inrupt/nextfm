@@ -1,0 +1,342 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-white;
+  }
+  
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* NeXT theme specific styles */
+  body.next-theme-background {
+    background-image: url('./NeXTSTEP_desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Helvetica, Arial, sans-serif;
+    @apply bg-next-black text-next-white;
+  }
+  
+  /* Default Inrupt/Podspaces theme styles */
+  body:not(.next-theme-background) {
+    background-color: #f8fafc;
+    @apply font-inrupt-body text-gray-800;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+  }
+  
+  /* Theme-specific heading styles */
+  body:not(.next-theme-background) h1, 
+  body:not(.next-theme-background) h2, 
+  body:not(.next-theme-background) h3, 
+  body:not(.next-theme-background) h4, 
+  body:not(.next-theme-background) h5, 
+  body:not(.next-theme-background) h6 {
+    @apply font-inrupt font-bold text-inrupt-navy;
+  }
+  
+  body[data-theme='next'] h1, 
+  body[data-theme='next'] h2, 
+  body[data-theme='next'] h3, 
+  body[data-theme='next'] h4, 
+  body[data-theme='next'] h5, 
+  body[data-theme='next'] h6 {
+    @apply font-next font-bold;
+  }
+  
+  button {
+    @apply transition-all duration-150;
+  }
+  
+  /* Adds Inrupt fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+}
+
+@layer components {
+  /* ========= INRUPT/PODSPACES THEME COMPONENTS ========= */
+  
+  /* Default window */
+  .default-window {
+    @apply bg-white rounded-lg shadow-inrupt overflow-hidden border border-gray-100;
+  }
+  
+  /* Default title bar */
+  .default-title-bar {
+    @apply bg-inrupt-navy px-4 py-3 flex justify-between items-center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    padding-bottom: 1.75rem;
+  }
+
+  .default-title-text {
+    @apply text-white text-base font-inrupt font-bold tracking-wide;
+  }
+  
+  /* Default panel inside windows */
+  .default-panel {
+    @apply bg-white border border-gray-100 rounded-lg shadow-inrupt;
+  }
+  
+  /* Default style main menu */
+  .default-menu-bar {
+    @apply bg-inrupt-navy py-2 px-4 flex;
+  }
+  
+  /* Default style menu items */
+  .default-menu-item {
+    @apply text-white hover:text-inrupt-light px-3 py-1 cursor-pointer font-inrupt;
+  }
+  
+  /* Default buttons */
+  .default-button {
+    @apply bg-white text-inrupt-navy py-1.5 px-4 rounded hover:bg-gray-50 border border-gray-200 
+    transition font-inrupt font-medium;
+  }
+  
+  /* Default primary buttons */
+  .default-button-primary {
+    @apply bg-inrupt-navy text-white py-1.5 px-4 rounded hover:bg-inrupt-dark transition font-inrupt font-medium;
+  }
+  
+  /* Default text inputs */
+  .default-input {
+    @apply bg-white text-gray-800 border border-gray-300 rounded px-3 py-2 
+    focus:border-inrupt-navy focus:ring-1 focus:ring-inrupt-navy focus:outline-none font-inrupt-body;
+  }
+  
+  /* Default file list */
+  .default-file-list {
+    @apply divide-y divide-gray-100;
+  }
+
+  /* Default file list item */
+  .default-file-item {
+    @apply py-3 px-4 hover:bg-gray-50 flex items-center font-inrupt-body;
+  }
+  
+  /* Default footer */
+  .default-footer {
+    @apply bg-inrupt-navy text-white py-3 flex justify-between px-4 font-inrupt text-sm;
+  }
+  
+  /* Footer text - ensure it's white for visibility */
+  .default-footer div {
+    @apply text-white;
+  }
+
+  /* ========= NEXT THEME COMPONENTS ========= */
+  
+  /* NeXTSTEP window with title bar and hard shadow */
+  .next-window {
+    @apply bg-next-dark border border-next-border shadow-next-window overflow-hidden;
+    position: relative;
+  }
+  
+  /* NeXTSTEP iconic window shadow - the characteristic "black shadow" of NeXTSTEP */
+  .next-window::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: -5px;
+    bottom: -5px;
+    background: #000000;
+    z-index: -1;
+  }
+  
+  /* NeXTSTEP title bar */
+  .next-title-bar {
+    @apply bg-next-titlebar px-2 py-1 flex justify-between items-center border-b border-next-border;
+  }
+
+  .next-title-text {
+    @apply text-next-white text-sm font-bold;
+  }
+  
+  /* NeXTSTEP panel inside windows */
+  .next-panel {
+    @apply bg-next-dark border border-next-border;
+  }
+  
+  /* NeXTSTEP style main menu */
+  .next-menu-bar {
+    @apply bg-next-menu flex border-b border-next-border;
+  }
+  
+  /* NeXTSTEP style menu items */
+  .next-menu-item {
+    @apply text-next-white hover:bg-next-blue hover:text-next-white px-3 py-1 cursor-pointer;
+  }
+  
+  /* NeXTSTEP buttons */
+  .next-button {
+    @apply bg-next-gray text-next-white py-1 px-3 border border-next-border hover:bg-next-blue shadow-next;
+  }
+  
+  /* NeXTSTEP primary buttons */
+  .next-button-primary {
+    @apply bg-next-blue text-next-white py-1 px-3 border border-next-border hover:bg-next-highlight shadow-next;
+  }
+  
+  /* NeXTSTEP text inputs */
+  .next-input {
+    @apply bg-next-white text-next-black border border-next-border px-2 py-1 focus:border-next-blue focus:outline-none shadow-next-inset;
+  }
+  
+  /* NeXTSTEP file icons */
+  .next-icon {
+    @apply flex items-center justify-center w-10 h-10 bg-next-white border border-next-border shadow-next;
+  }
+  
+  /* NeXTSTEP scrollbar (requires webkit) */
+  .next-scrollbar {
+    @apply scrollbar-thin scrollbar-thumb-next-gray scrollbar-track-next-dark;
+  }
+
+  /* NeXTSTEP file list */
+  .next-file-list {
+    @apply divide-y divide-next-border;
+  }
+
+  /* NeXTSTEP file list item */
+  .next-file-item {
+    @apply py-1 px-2 hover:bg-next-blue/20 flex items-center;
+  }
+  
+  /* NeXTSTEP footer */
+  .next-footer {
+    @apply bg-next-gray py-2 border-t border-next-border flex justify-between px-2;
+  }
+
+  /* ========= WINAMP THEME COMPONENTS ========= */
+  
+  /* General styles for Winamp-themed UI */
+  .winamp-window {
+    background-color: var(--winamp-bg, #333);
+    border: 1px solid var(--winamp-border, #555);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+  
+  /* Winamp title bar */
+  .winamp-title-bar {
+    background-color: var(--winamp-titlebar, #222);
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--winamp-border, #555);
+  }
+  
+  .winamp-title-text {
+    color: var(--winamp-text, #eee);
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+  
+  /* Winamp menu */
+  .winamp-menu-bar {
+    background-color: var(--winamp-titlebar, #222);
+    display: flex;
+    border-bottom: 1px solid var(--winamp-border, #555);
+  }
+  
+  .winamp-menu-item {
+    color: var(--winamp-text, #eee);
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+  }
+  
+  .winamp-menu-item:hover {
+    background-color: var(--winamp-accent, #6495ED);
+  }
+  
+  /* Winamp buttons */
+  .winamp-button {
+    background-color: var(--winamp-button, #444);
+    color: var(--winamp-text, #eee);
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--winamp-border, #555);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .winamp-button:hover {
+    background-color: var(--winamp-accent, #6495ED);
+  }
+  
+  .winamp-button-primary {
+    background-color: var(--winamp-accent, #6495ED);
+    color: var(--winamp-text, #eee);
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--winamp-border, #555);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .winamp-button-primary:hover {
+    background-color: var(--winamp-highlight, #87CEFA);
+  }
+  
+  /* Winamp inputs */
+  .winamp-input {
+    background-color: var(--winamp-bg, #333);
+    color: var(--winamp-text, #eee);
+    border: 1px solid var(--winamp-border, #555);
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .winamp-input:focus {
+    border-color: var(--winamp-accent, #6495ED);
+    outline: none;
+  }
+  
+  /* Winamp file list */
+  .winamp-file-list {
+    border-top: 1px solid var(--winamp-border, #555);
+  }
+  
+  .winamp-file-item {
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .winamp-file-item:hover {
+    background-color: var(--winamp-accent, #6495ED);
+  }
+  
+  /* Winamp selected item */
+  .winamp-selected-item {
+    background-color: var(--winamp-accent, #6495ED);
+    color: var(--winamp-text, #eee);
+  }
+  
+  /* Winamp footer */
+  .winamp-footer {
+    background-color: var(--winamp-titlebar, #222);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--winamp-border, #555);
+  }
+  
+  /* Support for CSS variables that will be set by the JS code when loading a skin */
+  body[data-theme^="winamp-"] {
+    --winamp-bg: #333;
+    --winamp-titlebar: #222;
+    --winamp-text: #eee;
+    --winamp-button: #444;
+    --winamp-accent: #6495ED;
+    --winamp-highlight: #87CEFA;
+    --winamp-border: #555;
+  }
+}
+
+code {
+  font-family: Monaco, 'Courier New', monospace;
+}
