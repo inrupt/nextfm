@@ -17,7 +17,7 @@
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
     "typescript": "5.8.3",
-    "web-vitals": "^4.2.4"
+    "web-vitals": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -49,12 +49,16 @@
     "rollup": "^3.29.5",
     "axe-core": "^4.8.5",
     "@babel/traverse": "^7.23.2",
-    "webpack": "^5.89.0"
+    "webpack": "^5.89.0",
+    "react-scripts": {
+      "typescript": "4.9.5"
+    }
   },
   "resolutions": {
     "serialize-javascript": "^6.0.2",
     "rollup": "^3.29.5",
-    "axe-core": "^4.8.5"
+    "axe-core": "^4.8.5",
+    "typescript": "4.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
