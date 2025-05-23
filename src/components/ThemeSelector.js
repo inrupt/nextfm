@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { THEMES, useTheme } from '../themes/themeContext';
 import { getThemeClasses } from '../themes/themeStyles';
 import { parseWinampSkin, storeWinampSkin } from '../themes/winampThemeParser';

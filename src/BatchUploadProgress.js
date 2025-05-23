@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { X, AlertCircle } from 'lucide-react';
 
 const BatchUploadProgress = ({ uploadProgress }) => {
@@ -48,7 +48,7 @@ const BatchUploadProgress = ({ uploadProgress }) => {
 
       {/* Error display */}
       {failedFiles > 0 && Object.entries(uploadProgress)
-        .filter(([_, status]) => status.status === 'error')
+        .filter(([, status]) => status.status === 'error')
         .map(([id, status]) => (
           <div key={id} className="mt-2 bg-next-red/10 border-l-2 border-next-red p-2 text-next-white text-xs rounded-sm">
             <div className="flex items-center">

@@ -4,7 +4,7 @@ import {
   deleteFile,
 } from "@inrupt/solid-client";
 import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Edit2, Trash2, Lock } from 'lucide-react';
 
 /**

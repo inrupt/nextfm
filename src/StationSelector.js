@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTheme, THEMES } from './themes/themeContext';
 import { getThemeClasses } from './themes/themeStyles';
 // Theme-specific logos

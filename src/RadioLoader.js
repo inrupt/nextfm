@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { useTheme, THEMES } from './themes/themeContext';
 import { getThemeClasses } from './themes/themeStyles';

@@ -254,7 +254,7 @@ const rgbToHex = (color) => {
  * @param {Object} titlebarColors - Colors extracted from TITLEBAR.BMP
  * @returns {Object} - Theme configuration for NextFM
  */
-const generateThemeConfig = (skinName, mainColors, playlistColors, titlebarColors) => {
+const generateThemeConfig = (skinName, mainColors) => {
   // Convert RGB objects to hex strings
   const background = rgbToHex(mainColors.background);
   const titleBar = rgbToHex(mainColors.titleBar);

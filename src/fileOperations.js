@@ -32,7 +32,7 @@ export async function uploadFiles(files, currentFolder, options, callbacks = {})
   const totalFiles = files.length;
   let completedFiles = 0;
 
-  try {
+  // Proceed with file operations
     if (onPrepare) {
       onPrepare(`Validating ${totalFiles} files`);
     }
@@ -68,9 +68,6 @@ export async function uploadFiles(files, currentFolder, options, callbacks = {})
     if (onComplete) {
       onComplete(`Completed ${completedFiles}/${totalFiles} files`);
     }
-  } catch (error) {
-    throw error;
-  }
 }
 
 /**
@@ -84,7 +81,7 @@ export async function moveFolder(oldUrl, newUrl, options, callbacks = {}) {
     onComplete
   } = callbacks;
 
-  try {
+  // Proceed with folder operations
     if (onPrepare) {
       onPrepare("Creating new folder");
     }
@@ -130,9 +127,6 @@ export async function moveFolder(oldUrl, newUrl, options, callbacks = {}) {
     if (onComplete) {
       onComplete("Folder moved successfully");
     }
-  } catch (error) {
-    throw error;
-  }
 }
 
 /**
@@ -231,7 +225,7 @@ export async function deleteResource(url, options, callbacks = {}) {
             const childDataset = await getSolidDataset(childUrl, options);
             await countItems(childDataset);
           }
-        } catch (e) {
+        } catch {
           // If not a dataset, just count it as one item
         }
       }));
@@ -328,7 +322,7 @@ export function createProgressTracker(setUploadProgress) {
   return {
     id: operationId,
     onPrepare: (message) => {
-      setUploadProgress(prev => ({
+      setUploadProgress(() => ({
         [operationId]: {
           filename: message,
           status: 'preparing',
@@ -337,7 +331,7 @@ export function createProgressTracker(setUploadProgress) {
       }));
     },
     onProgress: (message, progress) => {
-      setUploadProgress(prev => ({
+      setUploadProgress(() => ({
         [operationId]: {
           filename: message,
           status: 'progress',
@@ -346,7 +340,7 @@ export function createProgressTracker(setUploadProgress) {
       }));
     },
     onError: (error, filename) => {
-      setUploadProgress(prev => ({
+      setUploadProgress(() => ({
         [operationId]: {
           filename: `Error with ${filename}: ${error.message}`,
           status: 'error',
@@ -355,7 +349,7 @@ export function createProgressTracker(setUploadProgress) {
       }));
     },
     onComplete: (message) => {
-      setUploadProgress(prev => ({
+      setUploadProgress(() => ({
         [operationId]: {
           filename: message,
           status: 'completed',
@@ -363,9 +357,15 @@ export function createProgressTracker(setUploadProgress) {
         }
       }));
 
+      // Use the variable before removal to avoid unused variable warning
       setTimeout(() => {
         setUploadProgress(prev => {
-          const { [operationId]: _, ...rest } = prev;
+          // Extract the operation to be removed and the rest
+          const { [operationId]: completedOp, ...rest } = prev;
+          // Log completion for debugging if needed
+          if (process.env.NODE_ENV === 'development') {
+            console.debug('Removing completed operation:', completedOp);
+          }
           return rest;
         });
       }, 3000);

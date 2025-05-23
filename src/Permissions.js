@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Plus, X, Info, Link, ShieldCheck } from 'lucide-react';
 import {
   getSolidDataset,
@@ -70,7 +70,7 @@ const Permissions = ({ resourceUrl }) => {
             publicAccess: publicAccess || prev.publicAccess
           }));
         }
-      } catch (e) {
+      } catch {
         // Silently handle permission fetching errors
       }
     }

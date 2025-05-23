@@ -497,9 +497,11 @@ const handleBulkDelete = async () => {
               {isLoggedIn && (
                 <button
                   onClick={onLogout}
-                  className="text-next-white text-xs"
+                  className="text-next-white text-xs flex items-center gap-1"
+                  title="Logout"
                 >
                   <LogOut className="h-4 w-4" />
+                  <span>Logout</span>
                 </button>
               )}
             </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Highlight, themes } from 'prism-react-renderer';
 import { X } from 'lucide-react';
 
@@ -7,7 +6,7 @@ const FileViewer = ({ url, content, type, onClose }) => {
     try {
       JSON.parse(str);
       return true;
-    } catch (e) {
+    } catch {
       return false;
     }
   };
@@ -15,7 +14,7 @@ const FileViewer = ({ url, content, type, onClose }) => {
   const formatJson = (jsonString) => {
     try {
       return JSON.stringify(JSON.parse(jsonString), null, 2);
-    } catch (e) {
+    } catch {
       return jsonString;
     }
   };
@@ -62,7 +61,7 @@ const FileViewer = ({ url, content, type, onClose }) => {
                     code={formatJson(content)}
                     language="json"
                   >
-                    {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                    {({ tokens, getLineProps, getTokenProps }) => (
                       <pre className="p-2 text-sm font-mono" style={{color: "#000000", backgroundColor: "#FFFFFF"}}>
                         <table>
                           <tbody>

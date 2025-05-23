@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Plus, X, Info } from 'lucide-react';
 
 const AccessRow = ({ label, access }) => (
@@ -31,7 +31,7 @@ const PermissionButton = ({ mode, active, onClick, inherited }) => (
   </button>
 );
 
-const RestrictClient = ({ resourceUrl, onComplete, yourAccess, publicAccess, inherited = false, usingAcp = false }) => {
+const RestrictClient = ({ yourAccess, publicAccess, inherited = false }) => {
   const [showForm, setShowForm] = useState(false);
   const [clientId, setClientId] = useState('');
   const [modes, setModes] = useState({
@@ -39,7 +39,7 @@ const RestrictClient = ({ resourceUrl, onComplete, yourAccess, publicAccess, inh
     write: false,
     append: false
   });
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
 
   const handleAddAccess = async (e) => {
     e.preventDefault();

@@ -184,7 +184,7 @@ const handleUpload = useCallback(async (files) => {
   }
 }, [currentFolder, fetchFiles, updateFiles, clearError, handleError]);
 
-const handleDelete = useCallback(async (itemUrl, isFolder) => {
+const handleDelete = useCallback(async (itemUrl) => {
   const session = getDefaultSession();
   const progressTracker = createProgressTracker(setUploadProgress);
 

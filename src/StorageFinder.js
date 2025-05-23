@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FolderIcon, Loader2, AlertCircle } from 'lucide-react';
 import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
 
@@ -122,7 +122,7 @@ export default function StorageFinder({ onSubmit, error: externalError }) {
       // Ensure URL ends with trailing slash
       const normalizedUrl = fullUrl.endsWith('/') ? fullUrl : `${fullUrl}/`;
       onSubmit(normalizedUrl);
-    } catch (error) {
+    } catch {
       setInputError('Invalid storage URL');
     }
   };

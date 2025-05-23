@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import { getStoredWinampSkins, initializeWinampThemes } from './winampThemeParser';
 
 // Define available themes
