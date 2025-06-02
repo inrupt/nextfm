@@ -3,7 +3,7 @@ FROM node:18-alpine as builder
 WORKDIR /app
 
 # Add build arguments
-ARG PUBLIC_URL=https://nextfm.app
+ARG PUBLIC_URL=https://solidfm.app
 ENV PUBLIC_URL=$PUBLIC_URL
 
 # Install dependencies
@@ -27,8 +27,10 @@ COPY deploy/nginx.conf /etc/nginx/nginx.conf
 # Create required nginx directories with appropriate permissions
 RUN mkdir -p /tmp/client_temp /tmp/proxy_temp /tmp/fastcgi_temp /tmp/uwsgi_temp /tmp/scgi_temp && \
     chmod -R 777 /tmp && \
-    chown -R nginx:nginx /usr/share/nginx/html /tmp /etc/nginx && \
-    chmod -R 755 /usr/share/nginx/html
+    chown -R nginx:nginx /usr/share/nginx/html /tmp /etc/nginx /var/cache/nginx && \
+    chmod -R 755 /usr/share/nginx/html && \
+    touch /tmp/nginx.pid && \
+    chown nginx:nginx /tmp/nginx.pid
 
 # Add healthcheck
 HEALTHCHECK --interval=30s --timeout=3s \
