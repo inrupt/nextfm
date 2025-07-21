@@ -49,6 +49,9 @@
     "axe-core": "^4.8.5",
     "@babel/traverse": "^7.23.2",
     "webpack": "^5.89.0",
+    "@eslint/plugin-kit": "^0.3.3",
+    "brace-expansion": "^2.0.1",
+    "webpack-dev-server": "^5.2.1",
     "react-scripts": {
       "typescript": "4.9.5"
     }
