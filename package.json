@@ -9,7 +9,7 @@
     "@inrupt/solid-ui-react": "^3.0.0",
     "@inrupt/vocab-common-rdf": "^1.0.5",
     "jszip": "^3.10.1",
-    "lucide-react": "^0.515.0",
+    "lucide-react": "^0.554.0",
     "nth-check": "^2.1.1",
     "prism-react-renderer": "^2.4.0",
     "react": "^19.1.0",
