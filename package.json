@@ -23,7 +23,7 @@
     "@eslint/js": "^9.27.0",
     "@inrupt/eslint-config-react": "^3.2.7",
     "@rushstack/eslint-patch": "^1.11.0",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "autoprefixer": "10.4.21",
